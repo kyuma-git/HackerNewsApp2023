@@ -20,6 +20,9 @@
 		4EB363892B23959700AD694E /* Infra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363822B23959700AD694E /* Infra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4EB363922B25CA3500AD694E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363912B25CA3500AD694E /* User.swift */; };
 		4EB363942B25CA5700AD694E /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363932B25CA5700AD694E /* Story.swift */; };
+		4EB363972B25DE6300AD694E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363962B25DE6300AD694E /* APIClient.swift */; };
+		4EB363992B25DE8600AD694E /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363982B25DE8600AD694E /* RequestConfiguration.swift */; };
+		4EB3639B2B25DE9A00AD694E /* URLQueryValueEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3639A2B25DE9A00AD694E /* URLQueryValueEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		4EB363842B23959700AD694E /* Infra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infra.h; sourceTree = "<group>"; };
 		4EB363912B25CA3500AD694E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4EB363932B25CA5700AD694E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		4EB363962B25DE6300AD694E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		4EB363982B25DE8600AD694E /* RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfiguration.swift; sourceTree = "<group>"; };
+		4EB3639A2B25DE9A00AD694E /* URLQueryValueEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryValueEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		4EB363832B23959700AD694E /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				4EB363952B25DE5300AD694E /* APIClient */,
 				4EB363842B23959700AD694E /* Infra.h */,
 			);
 			path = Infra;
@@ -216,6 +223,16 @@
 			children = (
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		4EB363952B25DE5300AD694E /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				4EB363962B25DE6300AD694E /* APIClient.swift */,
+				4EB363982B25DE8600AD694E /* RequestConfiguration.swift */,
+				4EB3639A2B25DE9A00AD694E /* URLQueryValueEncoder.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +376,7 @@
 					};
 					4EB363812B23959700AD694E = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -462,6 +480,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB363992B25DE8600AD694E /* RequestConfiguration.swift in Sources */,
+				4EB3639B2B25DE9A00AD694E /* URLQueryValueEncoder.swift in Sources */,
+				4EB363972B25DE6300AD694E /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +839,7 @@
 		4EB3638B2B23959700AD694E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -841,6 +863,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -851,6 +874,7 @@
 		4EB3638C2B23959700AD694E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
