@@ -18,6 +18,8 @@
 		4EB363852B23959700AD694E /* Infra.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB363842B23959700AD694E /* Infra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EB363882B23959700AD694E /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363822B23959700AD694E /* Infra.framework */; };
 		4EB363892B23959700AD694E /* Infra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363822B23959700AD694E /* Infra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4EB363922B25CA3500AD694E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363912B25CA3500AD694E /* User.swift */; };
+		4EB363942B25CA5700AD694E /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363932B25CA5700AD694E /* Story.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		4EB363732B23958C00AD694E /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		4EB363822B23959700AD694E /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB363842B23959700AD694E /* Infra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infra.h; sourceTree = "<group>"; };
+		4EB363912B25CA3500AD694E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4EB363932B25CA5700AD694E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 		4EB3638D2B2395AD00AD694E /* DomainObject */ = {
 			isa = PBXGroup;
 			children = (
+				4EB363912B25CA3500AD694E /* User.swift */,
+				4EB363932B25CA5700AD694E /* Story.swift */,
 			);
 			path = DomainObject;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 					};
 					4EB363702B23958C00AD694E = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 					4EB363812B23959700AD694E = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -446,6 +453,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB363942B25CA5700AD694E /* Story.swift in Sources */,
+				4EB363922B25CA3500AD694E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +613,7 @@
 		4EB363642B23947D00AD694E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -633,6 +643,7 @@
 		4EB363652B23947D00AD694E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -738,6 +749,7 @@
 		4EB3637A2B23958C00AD694E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -761,6 +773,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -771,6 +784,7 @@
 		4EB3637B2B23958C00AD694E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
