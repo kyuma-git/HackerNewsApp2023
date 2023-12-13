@@ -9,19 +9,33 @@ import SwiftUI
 
 public struct NewsListView: View {
 
+    @StateObject private var viewModel = NewsListViewModel()
+
     public init() {}
 
     public var body: some View {
         NavigationStack {
             ScrollView {
                 ZStack{
-                    VStack(alignment: .leading) {
-                        ForEach(1..<21) { n in
-                            Text("News article \(n)")
+                    switch viewModel.viewData {
+                    case .loaded(let ids):
+                        VStack(alignment: .leading) {
+                            Text("First news article: \(ids.count)")
                         }
+                    case .empty:
+                        EmptyView()
+                    case .loading:
+                        EmptyView()
+                    case .error:
+                        EmptyView()
+                    case .initial:
+                        EmptyView()
                     }
                 }
             }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
     }
 }

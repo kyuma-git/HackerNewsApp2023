@@ -23,6 +23,14 @@
 		4EB363992B25DE8600AD694E /* RequestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363982B25DE8600AD694E /* RequestConfiguration.swift */; };
 		4EB3639B2B25DE9A00AD694E /* URLQueryValueEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3639A2B25DE9A00AD694E /* URLQueryValueEncoder.swift */; };
 		4EB3639D2B27083700AD694E /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3639C2B27083700AD694E /* NewsListView.swift */; };
+		4EB3639F2B2861B900AD694E /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3639E2B2861B900AD694E /* NewsListViewModel.swift */; };
+		4EB363A82B28657A00AD694E /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB363A72B28657A00AD694E /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EB363AB2B28657A00AD694E /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363A52B28657A00AD694E /* Utility.framework */; };
+		4EB363AC2B28657A00AD694E /* Utility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363A52B28657A00AD694E /* Utility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4EB363B12B28658C00AD694E /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B02B28658C00AD694E /* UIState.swift */; };
+		4EB363B32B2888A000AD694E /* NewsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B22B2888A000AD694E /* NewsViewData.swift */; };
+		4EB363B52B288AE800AD694E /* NewsListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B42B288AE800AD694E /* NewsListUseCase.swift */; };
+		4EB363B82B29181B00AD694E /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B72B29181B00AD694E /* NewsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,13 @@
 			remoteGlobalIDString = 4EB363812B23959700AD694E;
 			remoteInfo = Infra;
 		};
+		4EB363A92B28657A00AD694E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EB363352B23947C00AD694E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EB363A42B28657A00AD694E;
+			remoteInfo = Utility;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +78,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4EB363AC2B28657A00AD694E /* Utility.framework in Embed Frameworks */,
 				4EB363782B23958C00AD694E /* Domain.framework in Embed Frameworks */,
 				4EB363892B23959700AD694E /* Infra.framework in Embed Frameworks */,
 			);
@@ -89,6 +105,13 @@
 		4EB363982B25DE8600AD694E /* RequestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConfiguration.swift; sourceTree = "<group>"; };
 		4EB3639A2B25DE9A00AD694E /* URLQueryValueEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryValueEncoder.swift; sourceTree = "<group>"; };
 		4EB3639C2B27083700AD694E /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		4EB3639E2B2861B900AD694E /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		4EB363A52B28657A00AD694E /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB363A72B28657A00AD694E /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		4EB363B02B28658C00AD694E /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
+		4EB363B22B2888A000AD694E /* NewsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewData.swift; sourceTree = "<group>"; };
+		4EB363B42B288AE800AD694E /* NewsListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUseCase.swift; sourceTree = "<group>"; };
+		4EB363B72B29181B00AD694E /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB363AB2B28657A00AD694E /* Utility.framework in Frameworks */,
 				4EB363772B23958C00AD694E /* Domain.framework in Frameworks */,
 				4EB363882B23959700AD694E /* Infra.framework in Frameworks */,
 			);
@@ -129,6 +153,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4EB363A22B28657A00AD694E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,6 +169,7 @@
 				4EB3633F2B23947C00AD694E /* HackerNewsApp2023 */,
 				4EB363722B23958C00AD694E /* Domain */,
 				4EB363832B23959700AD694E /* Infra */,
+				4EB363A62B28657A00AD694E /* Utility */,
 				4EB3633E2B23947C00AD694E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -150,6 +182,7 @@
 				4EB363592B23947D00AD694E /* HackerNewsApp2023UITests.xctest */,
 				4EB363712B23958C00AD694E /* Domain.framework */,
 				4EB363822B23959700AD694E /* Infra.framework */,
+				4EB363A52B28657A00AD694E /* Utility.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +221,7 @@
 		4EB363832B23959700AD694E /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				4EB363B62B29180C00AD694E /* News */,
 				4EB363952B25DE5300AD694E /* APIClient */,
 				4EB363842B23959700AD694E /* Infra.h */,
 			);
@@ -206,6 +240,7 @@
 		4EB3638E2B2395B600AD694E /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				4EB363B42B288AE800AD694E /* NewsListUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -214,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				4EB3639C2B27083700AD694E /* NewsListView.swift */,
+				4EB3639E2B2861B900AD694E /* NewsListViewModel.swift */,
+				4EB363B22B2888A000AD694E /* NewsViewData.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -235,6 +272,23 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		4EB363A62B28657A00AD694E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4EB363A72B28657A00AD694E /* Utility.h */,
+				4EB363B02B28658C00AD694E /* UIState.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		4EB363B62B29180C00AD694E /* News */ = {
+			isa = PBXGroup;
+			children = (
+				4EB363B72B29181B00AD694E /* NewsRepository.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -251,6 +305,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EB363852B23959700AD694E /* Infra.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EB363A02B28657A00AD694E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EB363A82B28657A00AD694E /* Utility.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +333,7 @@
 			dependencies = (
 				4EB363762B23958C00AD694E /* PBXTargetDependency */,
 				4EB363872B23959700AD694E /* PBXTargetDependency */,
+				4EB363AA2B28657A00AD694E /* PBXTargetDependency */,
 			);
 			name = HackerNewsApp2023;
 			productName = HackerNewsApp2023;
@@ -349,6 +412,24 @@
 			productReference = 4EB363822B23959700AD694E /* Infra.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		4EB363A42B28657A00AD694E /* Utility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EB363AD2B28657A00AD694E /* Build configuration list for PBXNativeTarget "Utility" */;
+			buildPhases = (
+				4EB363A02B28657A00AD694E /* Headers */,
+				4EB363A12B28657A00AD694E /* Sources */,
+				4EB363A22B28657A00AD694E /* Frameworks */,
+				4EB363A32B28657A00AD694E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Utility;
+			productName = Utility;
+			productReference = 4EB363A52B28657A00AD694E /* Utility.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -378,6 +459,10 @@
 						CreatedOnToolsVersion = 15.0.1;
 						LastSwiftMigration = 1500;
 					};
+					4EB363A42B28657A00AD694E = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
+					};
 				};
 			};
 			buildConfigurationList = 4EB363382B23947C00AD694E /* Build configuration list for PBXProject "HackerNewsApp2023" */;
@@ -398,6 +483,7 @@
 				4EB363582B23947D00AD694E /* HackerNewsApp2023UITests */,
 				4EB363702B23958C00AD694E /* Domain */,
 				4EB363812B23959700AD694E /* Infra */,
+				4EB363A42B28657A00AD694E /* Utility */,
 			);
 		};
 /* End PBXProject section */
@@ -440,6 +526,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4EB363A32B28657A00AD694E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -450,6 +543,8 @@
 				4EB363432B23947C00AD694E /* ContentView.swift in Sources */,
 				4EB3639D2B27083700AD694E /* NewsListView.swift in Sources */,
 				4EB363412B23947C00AD694E /* HackerNewsApp2023App.swift in Sources */,
+				4EB3639F2B2861B900AD694E /* NewsListViewModel.swift in Sources */,
+				4EB363B32B2888A000AD694E /* NewsViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EB363942B25CA5700AD694E /* Story.swift in Sources */,
+				4EB363B52B288AE800AD694E /* NewsListUseCase.swift in Sources */,
 				4EB363922B25CA3500AD694E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,9 +576,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB363B82B29181B00AD694E /* NewsRepository.swift in Sources */,
 				4EB363992B25DE8600AD694E /* RequestConfiguration.swift in Sources */,
 				4EB3639B2B25DE9A00AD694E /* URLQueryValueEncoder.swift in Sources */,
 				4EB363972B25DE6300AD694E /* APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EB363A12B28657A00AD694E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EB363B12B28658C00AD694E /* UIState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +613,11 @@
 			isa = PBXTargetDependency;
 			target = 4EB363812B23959700AD694E /* Infra */;
 			targetProxy = 4EB363862B23959700AD694E /* PBXContainerItemProxy */;
+		};
+		4EB363AA2B28657A00AD694E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EB363A42B28657A00AD694E /* Utility */;
+			targetProxy = 4EB363A92B28657A00AD694E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -905,6 +1015,75 @@
 			};
 			name = Release;
 		};
+		4EB363AE2B28657A00AD694E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W8M896S9ZZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kyuma.morita.Utility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4EB363AF2B28657A00AD694E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W8M896S9ZZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kyuma.morita.Utility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -958,6 +1137,15 @@
 			buildConfigurations = (
 				4EB3638B2B23959700AD694E /* Debug */,
 				4EB3638C2B23959700AD694E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EB363AD2B28657A00AD694E /* Build configuration list for PBXNativeTarget "Utility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EB363AE2B28657A00AD694E /* Debug */,
+				4EB363AF2B28657A00AD694E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
