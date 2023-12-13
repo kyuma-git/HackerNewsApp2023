@@ -12,12 +12,12 @@ import Infra
 
 final class NewsListViewModel: ObservableObject {
 
-    @Published var viewData: UIState<[String]> = .initial
+    @Published var uiState: UIState<NewsListViewData> = .initial
 
-    private let  newsListSubject = PassthroughSubject<[Story.ID], Never>()
+    private let  newsListSubject = PassthroughSubject<[Story], Never>()
     private var cancellable = Set<AnyCancellable>()
 
-    var newsList: AnyPublisher<[Story.ID], Never> {
+    var newsList: AnyPublisher<[Story], Never> {
         newsListSubject.eraseToAnyPublisher()
     }
 
@@ -45,22 +45,22 @@ final class NewsListViewModel: ObservableObject {
     private func setupBindings() {
         newsListSubject
             .receive(on: RunLoop.main)
-            .sink { [weak self] news in
-                self?.viewData = .loaded(
-                    news.map {
-                        String($0.value)
-                    }
-                )
+            .sink { [weak self] items in
+                guard let strongSelf = self else { return }
+                self?.uiState = .loaded(NewsListViewData(
+                    strategy: strongSelf.useCase.dependency.strategy,
+                    items: items
+                ))
             }
             .store(in: &cancellable)
     }
 
     func fetch() async throws {
         do {
-            let response = try await useCase.fetchIDs()
+            let response = try await useCase.fetchStories()
             newsListSubject.send(response)
         } catch {
-            print("Failed to fetch news stories")
+            print("Failed to fetch news stories: \(error.localizedDescription)")
         }
     }
 }

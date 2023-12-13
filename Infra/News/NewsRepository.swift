@@ -14,6 +14,10 @@ public struct NewsRepository: NewsRepositoryProtocol {
     public func fetchStoryIDs(strategy: NewsListUseCase.Strategy) async throws -> [Story.ID] {
         try await APIClient().connect(config: NewsRequest.GetStoryIDs(strategy: strategy))
     }
+
+    public func fetchStory(id: Story.ID) async throws -> Story {
+        try await APIClient().connect(config: NewsRequest.Get(id: id))
+    }
 }
 
 private struct NewsRequest {
@@ -44,20 +48,68 @@ private struct NewsRequest {
             return dtos.map { Story.ID(dto: $0) }
         }
     }
+
+    struct Get: RequestConfiguration {
+        typealias Response = Story
+        let method = Method.get
+        let endpoint: Endpoint
+        let headers: [String : String] = [:]
+        let parameters: [String : Any] = [:]
+        let needsIDToken = true
+
+        init(id: Story.ID) {
+            endpoint = Endpoint(
+                hostName: "https://hacker-news.firebaseio.com",
+                path: "/v0/item/\(id.value).json"
+            )
+        }
+        func response(from data: Data) throws -> Response {
+            let dto = try JSONDecoder().decode(StoryDTO.self, from: data)
+            return Story(dto: dto)
+        }
+    }
 }
 
 struct StoryIDDTO: Decodable {
-    let value: String
+    let value: Int
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let intValue = try container.decode(Int.self)
-        self.value = String(intValue)
+        self.value = intValue
+    }
+}
+
+struct StoryDTO: Decodable {
+    let id: Int
+    let authorName: String
+    let title: String
+    let urlString: String = "https://twitter.com/home"
+    let score: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case authorName = "by"
+        case title
+        case urlString = "url"
+        case score
     }
 }
 
 extension Story.ID {
     init(dto: StoryIDDTO) {
         self = Story.ID(value: dto.value)
+    }
+}
+
+extension Story {
+    init(dto: StoryDTO) {
+        self = Story(
+            id: Story.ID(value: dto.id),
+            authorName: dto.authorName,
+            title: dto.title,
+            url: URL(string: dto.urlString),
+            score: dto.score
+        )
     }
 }

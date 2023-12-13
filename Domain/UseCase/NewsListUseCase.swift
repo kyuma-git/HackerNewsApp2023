@@ -28,18 +28,33 @@ public struct NewsListUseCase {
         case popular
     }
 
-    private let dependency: Dependency
+    public let dependency: Dependency
 
     public init(dependency: Dependency) {
         self.dependency = dependency
     }
 
-    public func fetchIDs() async throws -> [Story.ID] {
+    private func fetchIDs() async throws -> [Story.ID] {
         try await dependency.newsRepository.fetchStoryIDs(strategy: dependency.strategy)
+    }
+
+    public func fetchStories() async throws -> [Story] {
+        let ids = try await fetchIDs()
+
+        var stories: [Story] = []
+
+        // Paging may be needed
+        for id in ids.prefix(5) {
+            let res = try await dependency.newsRepository.fetchStory(id: id)
+            stories.append(res)
+        }
+
+        return stories
     }
 }
 
 /// Interface of functions to access api resources
 public protocol NewsRepositoryProtocol {
     func fetchStoryIDs(strategy: NewsListUseCase.Strategy) async throws -> [Story.ID]
+    func fetchStory(id: Story.ID) async throws -> Story
 }

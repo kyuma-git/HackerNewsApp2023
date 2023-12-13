@@ -8,8 +8,8 @@
 /// News story
 public struct Story: Identifiable, Hashable {
     public struct ID: Hashable {
-        public let value: String
-        public init(value: String) {
+        public let value: Int
+        public init(value: Int) {
             self.value = value
         }
     }
@@ -17,22 +17,14 @@ public struct Story: Identifiable, Hashable {
     public let id: ID
     public let authorName: String
     public let title: String
-    public let text: String
-    public let url: URL
+    public let url: URL?
     public let score: Int
-    public let isDeleted: Bool
-    public let isDead: Bool
-    public let createdAt: Date
 
-    public init(id: ID, authorName: String, title: String, text: String, url: URL, score: Int, isDeleted: Bool, isDead: Bool, createdAt: Date) {
+    public init(id: ID, authorName: String, title: String, url: URL?, score: Int) {
         self.id = id
         self.authorName = authorName
         self.title = title
-        self.text = text
         self.url = url
         self.score = score
-        self.isDeleted = isDeleted
-        self.isDead = isDead
-        self.createdAt = createdAt
     }
 }
