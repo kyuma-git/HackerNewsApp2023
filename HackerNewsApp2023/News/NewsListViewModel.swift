@@ -21,9 +21,14 @@ final class NewsListViewModel: ObservableObject {
         newsListSubject.eraseToAnyPublisher()
     }
 
-    private let useCase = NewsListUseCase(dependency: .init(newsRepository: NewsRepository()))
+    private let useCase: NewsListUseCase
 
-    init() {
+    init(strategy: NewsListUseCase.Strategy) {
+        useCase = NewsListUseCase(dependency: .init(
+            strategy: strategy,
+            newsRepository: NewsRepository()
+        ))
+
         setupBindings()
     }
 
@@ -33,8 +38,13 @@ final class NewsListViewModel: ObservableObject {
         }
     }
 
+    func onTapStory(id: Story.ID) {
+        // do something
+    }
+
     private func setupBindings() {
         newsListSubject
+            .receive(on: RunLoop.main)
             .sink { [weak self] news in
                 self?.viewData = .loaded(
                     news.map {
@@ -47,8 +57,7 @@ final class NewsListViewModel: ObservableObject {
 
     func fetch() async throws {
         do {
-            let response = try await useCase.fetch()
-//            print(response)
+            let response = try await useCase.fetchIDs()
             newsListSubject.send(response)
         } catch {
             print("Failed to fetch news stories")

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Domain
 
 public struct NewsListView: View {
 
-    @StateObject private var viewModel = NewsListViewModel()
+    @StateObject private var viewModel: NewsListViewModel
 
-    public init() {}
+    public init(strategy: NewsListUseCase.Strategy) {
+        _viewModel = StateObject(wrappedValue: NewsListViewModel(strategy: strategy))
+    }
 
     public var body: some View {
         NavigationStack {

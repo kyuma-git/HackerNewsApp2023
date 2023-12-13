@@ -16,12 +16,12 @@ public struct ContentView: View {
 
     public var body: some View {
             TabView(selection: $selectedTab) {
-                NewsListView()
+                NewsListView(strategy: .new)
                     .tabItem {
                         Text("Top")
                     }
                     .tag(0)
-                NewsListView()
+                NewsListView(strategy: .popular)
                     .tabItem {
                         Text("Popular")
                     }
