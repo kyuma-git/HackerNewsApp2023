@@ -23,19 +23,27 @@ public struct NewsListView: View {
         NavigationStack {
             switch viewModel.uiState {
             case .loaded(let viewData):
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        Text(viewData.headerText)
-                            .bold()
-                            .font(.system(size: 20))
-                            .lineLimit(3)
-                            .padding(.bottom, 20)
+                VStack(alignment: .leading) {
+                    Text(viewData.headerText)
+                        .bold()
+                        .font(.system(size: 20))
+                        .lineLimit(3)
+                        .padding(.bottom, 20)
+                    ScrollView {
                         ForEach(viewData.items) { item in
                             VStack(alignment: .leading) {
                                 Text(item.title)
                                 HStack {
-                                    Image(systemName: "person.fill")
-                                    Text(item.authorName)
+                                    HStack {
+                                        Image(systemName: "person.fill")
+                                        Text(item.authorName)
+                                        Spacer()
+                                    }
+                                    .frame(width: 130)
+                                    HStack {
+                                        Image(systemName: "hands.clap")
+                                        Text(String(item.score))
+                                    }
                                 }
                                 Divider()
                             }
@@ -45,8 +53,8 @@ public struct NewsListView: View {
                             }
                         }
                     }
-                    .padding(.horizontal, 16)
                 }
+                .padding(.horizontal, 16)
             case .empty:
                 VStack {
                     Spacer()
