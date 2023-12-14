@@ -21,3 +21,8 @@ struct NewsListViewData {
         self.items = items
     }
 }
+
+struct IdentifiableURL: Identifiable {
+    let id = UUID()
+    let url: URL
+}
