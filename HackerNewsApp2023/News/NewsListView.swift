@@ -48,7 +48,6 @@ public struct NewsListView: View {
                                 Divider()
                             }
                             .onTapGesture {
-                                print("tapped \(item.id)")
                                 viewModel.onTapStory(url: item.url)
                             }
                         }

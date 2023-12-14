@@ -32,6 +32,7 @@
 		4EB363B52B288AE800AD694E /* NewsListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B42B288AE800AD694E /* NewsListUseCase.swift */; };
 		4EB363B82B29181B00AD694E /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B72B29181B00AD694E /* NewsRepository.swift */; };
 		4EF6660C2B2A7993001B6674 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF6660B2B2A7993001B6674 /* SafariView.swift */; };
+		4EF6660E2B2B16C6001B6674 /* NewsListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		4EB363B42B288AE800AD694E /* NewsListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUseCase.swift; sourceTree = "<group>"; };
 		4EB363B72B29181B00AD694E /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 		4EF6660B2B2A7993001B6674 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				4EB363B42B288AE800AD694E /* NewsListUseCase.swift */,
+				4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 					};
 					4EB3634E2B23947D00AD694E = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = 4EB3633C2B23947C00AD694E;
 					};
 					4EB363582B23947D00AD694E = {
@@ -555,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EF6660E2B2B16C6001B6674 /* NewsListUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +815,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W8M896S9ZZ;
@@ -819,6 +825,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kyuma.morita.HackerNewsApp2023Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackerNewsApp2023.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HackerNewsApp2023";
@@ -830,6 +837,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W8M896S9ZZ;

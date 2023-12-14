@@ -28,6 +28,10 @@ public struct NewsListUseCase {
         case popular
     }
 
+    public enum NewsListError: Error {
+        case fetchError
+    }
+
     public let dependency: Dependency
 
     public init(dependency: Dependency) {
