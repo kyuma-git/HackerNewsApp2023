@@ -1,3 +1,8 @@
 # HackerNewsApp2023
 
-Write how to build the project here (WIP) 
+## Getting Started
+- Select schema for `HackerNewsApp2023`
+- Run the build!
+
+## Architecture document
+The layer structure is organized based on VMMV; the Model layer incorporates the Clean Architecture philosophy. The persistence layer adopts the Repository pattern.
