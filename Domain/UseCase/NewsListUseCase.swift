@@ -47,8 +47,8 @@ public struct NewsListUseCase {
 
         var stories: [Story] = []
 
-        // Paging may be needed
-        for id in ids.prefix(5) {
+        // Considering performance, limit it to only 15 items
+        for id in ids.prefix(15) {
             let res = try await dependency.newsRepository.fetchStory(id: id)
             stories.append(res)
         }

@@ -11,23 +11,29 @@ public struct ContentView: View {
     @State private var selectedTab = 0
 
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(Color.white)
+        UITabBar.appearance().backgroundColor = UIColor(Color.gray.opacity(0.1))
     }
 
     public var body: some View {
             TabView(selection: $selectedTab) {
                 NewsListView(strategy: .new)
                     .tabItem {
-                        Text("Top")
+                        VStack {
+                            Image(systemName: "newspaper.fill")
+                            Text("Top Stories")
+                        }
                     }
                     .tag(0)
                 NewsListView(strategy: .popular)
                     .tabItem {
-                        Text("Popular")
+                        VStack {
+                            Image(systemName: "hands.clap.fill")
+                            Text("Popular")
+                        }
                     }
                     .tag(1)
             }
-            .accentColor(.orange)
+            .accentColor(.blue)
             .navigationBarBackButtonHidden(true)
     }
 }

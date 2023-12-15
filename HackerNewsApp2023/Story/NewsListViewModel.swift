@@ -19,9 +19,7 @@ final class NewsListViewModel: ObservableObject {
     @Published var uiState: UIState<NewsListViewData> = .initial
     @Published var selectedStoryURL: IdentifiableURL?
 
-
     private let  newsListSubject = PassthroughSubject<[Story], Never>()
-    let eventPublisher = PassthroughSubject<Event, Never>()
     private var cancellable = Set<AnyCancellable>()
 
     var newsList: AnyPublisher<[Story], Never> {
@@ -48,7 +46,6 @@ final class NewsListViewModel: ObservableObject {
     func onTapStory(url: URL?) {
         if let url = url {
             selectedStoryURL = IdentifiableURL(url: url)
-            eventPublisher.send(.showInternalWeb(url: url))
         } else {
             // show error dialong
         }

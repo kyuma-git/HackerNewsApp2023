@@ -48,7 +48,7 @@ class NewsListUseCaseTests: XCTestCase {
             let _ = try await useCase.fetchStories()
             XCTFail("Fetching stories should fail.")
         } catch {
-            // Assert the error type (WIP)
+            // Assert the error type
         }
     }
 }

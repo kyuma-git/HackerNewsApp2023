@@ -84,7 +84,7 @@ struct StoryDTO: Decodable {
     let id: Int
     let authorName: String
     let title: String
-    let urlString: String
+    let urlString: String = "https://twitter.com/home"
     let score: Int
 
     enum CodingKeys: String, CodingKey {
