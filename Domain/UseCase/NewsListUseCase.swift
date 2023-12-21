@@ -47,10 +47,14 @@ public struct NewsListUseCase {
 
         var stories: [Story] = []
 
-        // Considering performance, limit it to only 15 items
         for id in ids.prefix(15) {
-            let res = try await dependency.newsRepository.fetchStory(id: id)
-            stories.append(res)
+            do {
+                let res = try await dependency.newsRepository.fetchStory(id: id)
+                stories.append(res)
+            } catch {
+                print("Error fetching story for id \(id): \(error)")
+                continue
+            }
         }
 
         return stories
