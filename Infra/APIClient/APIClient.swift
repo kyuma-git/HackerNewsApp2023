@@ -71,7 +71,7 @@ public final class APIClient {
             let session = dependency.session
 
             do {
-                var headers = config.headers
+                let headers = config.headers
                 let result = try await session.request(
                     url: config.endpoint.url,
                     method: config.method.stringValue,
