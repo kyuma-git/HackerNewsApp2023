@@ -67,6 +67,7 @@ final class NewsListViewModel: ObservableObject {
 
     func fetch() async throws {
         do {
+            uiState = .loading
             let response = try await useCase.fetchStories()
             newsListSubject.send(response)
         } catch {

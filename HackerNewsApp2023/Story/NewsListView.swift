@@ -83,11 +83,9 @@ struct NewsListView: View {
                     Spacer()
                 }
             case .loading:
-                VStack {
-                    Spacer()
-                    Image(systemName: "slowmo")
-                    Spacer()
-                }
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue)) // 任意の色に設定
+                    .scaleEffect(2)
             case .error:
                 VStack {
                     Spacer()
