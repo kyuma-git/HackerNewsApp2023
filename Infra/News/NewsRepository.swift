@@ -115,15 +115,13 @@ extension Story {
             throw StoryError.invalidURL
         }
 
-        let converter = UnixTimeConverter()
-
         self = Story(
             id: Story.ID(value: dto.id),
             authorName: dto.authorName,
             title: dto.title,
             url: url,
             score: dto.score,
-            createdAt: converter.convertToDate(from: dto.time)
+            createdAt: Date(timeIntervalSince1970: dto.time)
         )
     }
 }

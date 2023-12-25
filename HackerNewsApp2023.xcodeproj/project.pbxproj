@@ -35,7 +35,6 @@
 		4EB363B32B2888A000AD694E /* StoryViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B22B2888A000AD694E /* StoryViewObject.swift */; };
 		4EB363B52B288AE800AD694E /* NewsListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B42B288AE800AD694E /* NewsListUseCase.swift */; };
 		4EB363B82B29181B00AD694E /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363B72B29181B00AD694E /* NewsRepository.swift */; };
-		4EC1BD582B3A176B00EEBC96 /* UnixTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1BD572B3A176B00EEBC96 /* UnixTimeConverter.swift */; };
 		4EC1BD5B2B3A19A000EEBC96 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1BD5A2B3A19A000EEBC96 /* Calendar+Extension.swift */; };
 		4EC1BD5C2B3A1C9300EEBC96 /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363A52B28657A00AD694E /* Utility.framework */; };
 		4EC1BD5D2B3A1C9300EEBC96 /* Utility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363A52B28657A00AD694E /* Utility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -157,7 +156,6 @@
 		4EB363B22B2888A000AD694E /* StoryViewObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewObject.swift; sourceTree = "<group>"; };
 		4EB363B42B288AE800AD694E /* NewsListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUseCase.swift; sourceTree = "<group>"; };
 		4EB363B72B29181B00AD694E /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
-		4EC1BD572B3A176B00EEBC96 /* UnixTimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnixTimeConverter.swift; sourceTree = "<group>"; };
 		4EC1BD5A2B3A19A000EEBC96 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
 		4EC1BD612B3A1DD800EEBC96 /* DatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePresenter.swift; sourceTree = "<group>"; };
 		4EC1BD672B3A269F00EEBC96 /* UtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,7 +360,6 @@
 				4EB363A72B28657A00AD694E /* Utility.h */,
 				4EB363B02B28658C00AD694E /* UIState.swift */,
 				4EF6660B2B2A7993001B6674 /* SafariView.swift */,
-				4EC1BD572B3A176B00EEBC96 /* UnixTimeConverter.swift */,
 				4EC1BD612B3A1DD800EEBC96 /* DatePresenter.swift */,
 			);
 			path = Utility;
@@ -727,7 +724,6 @@
 				4EC1BD5B2B3A19A000EEBC96 /* Calendar+Extension.swift in Sources */,
 				4EC1BD622B3A1DD800EEBC96 /* DatePresenter.swift in Sources */,
 				4EB363B12B28658C00AD694E /* UIState.swift in Sources */,
-				4EC1BD582B3A176B00EEBC96 /* UnixTimeConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
