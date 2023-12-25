@@ -42,26 +42,34 @@ struct NewsListView: View {
                                                 .aspectRatio(contentMode: .fill)
                                                 .frame(width: 130, height: 80)
                                         }
-                                    )
+                                    ).cornerRadius(5)
                                     VStack(alignment: .leading) {
                                         Text(item.title)
                                             .bold()
                                             .lineLimit(3)
                                         HStack {
-                                            HStack {
+                                            HStack(spacing: 4) {
+                                                Image(systemName: "hands.clap")
+                                                    .resizable()
+                                                    .frame(width: 14, height: 14)
+                                                Text(String(item.score))
+                                                    .font(.system(size: 14))
+                                            }
+                                            HStack(spacing: 4) {
                                                 Image(systemName: "person.fill")
+                                                    .resizable()
+                                                    .frame(width: 14, height: 14)
                                                 Text(item.authorName)
                                                     .font(.system(size: 14))
                                                 Spacer()
                                             }
-                                            .foregroundColor(.gray)
-                                            .frame(width: 130)
-                                            HStack {
-                                                Image(systemName: "hands.clap")
-                                                Text(String(item.score))
-                                                    .font(.system(size: 14))
-                                            }
+                                            
+                                            .lineLimit(1)
                                         }
+                                        .foregroundColor(.gray)
+                                        Text(item.createdAt)
+                                            .font(.system(size: 14))
+                                            .lineLimit(1)
                                     }
                                 }
                                 .frame(height: 100)

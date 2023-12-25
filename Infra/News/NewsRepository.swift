@@ -6,6 +6,11 @@
 //
 
 import Domain
+import Utility
+
+// Use Hacker News API.
+// Please see the following URL for details
+// https://github.com/HackerNews/API
 
 public struct NewsRepository: NewsRepositoryProtocol {
 
@@ -65,7 +70,7 @@ private struct NewsRequest {
         }
         func response(from data: Data) throws -> Response {
             let dto = try JSONDecoder().decode(StoryDTO.self, from: data)
-            return Story(dto: dto)
+            return try Story(dto: dto)
         }
     }
 }
@@ -86,6 +91,7 @@ struct StoryDTO: Decodable {
     let title: String
     let urlString: String
     let score: Int
+    let time: TimeInterval
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -93,6 +99,7 @@ struct StoryDTO: Decodable {
         case title
         case urlString = "url"
         case score
+        case time
     }
 }
 
@@ -103,13 +110,20 @@ extension Story.ID {
 }
 
 extension Story {
-    init(dto: StoryDTO) {
+    init(dto: StoryDTO) throws {
+        guard let url = URL(string: dto.urlString) else {
+            throw StoryError.invalidURL
+        }
+
+        let converter = UnixTimeConverter()
+
         self = Story(
             id: Story.ID(value: dto.id),
             authorName: dto.authorName,
             title: dto.title,
-            url: URL(string: dto.urlString),
-            score: dto.score
+            url: url,
+            score: dto.score,
+            createdAt: converter.convertToDate(from: dto.time)
         )
     }
 }

@@ -16,7 +16,7 @@ final class NewsListViewModel: ObservableObject {
         case showInternalWeb(url: URL)
     }
 
-    @Published var uiState: UIState<NewsListViewData> = .initial
+    @Published var uiState: UIState<NewsListViewObject> = .initial
     @Published var selectedStoryURL: IdentifiableURL?
 
     private let  newsListSubject = PassthroughSubject<[Story], Never>()
@@ -57,9 +57,13 @@ final class NewsListViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { [weak self] items in
                 guard let strongSelf = self else { return }
-                self?.uiState = .loaded(NewsListViewData(
+                // Order an Array of Story in descending date order.
+                var stories = items
+                let sortedStories: [Story] = stories.sorted { $0.createdAt > $1.createdAt }
+
+                self?.uiState = .loaded(NewsListViewObject(
                     strategy: strongSelf.useCase.dependency.strategy,
-                    items: items
+                    items: sortedStories.map { StoryViewObject(domainObject: $0) }
                 ))
             }
             .store(in: &cancellable)
