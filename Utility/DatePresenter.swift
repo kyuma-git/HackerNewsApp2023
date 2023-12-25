@@ -6,21 +6,25 @@
 //
 
 public struct DatePresenter {
-    public init(date: Date) {
-        self.dateFormatter = DateFormatter()
-        self.date = date
-    }
-
     private let dateFormatter: DateFormatter
     private let date: Date
-    private let locale = Calendar.localized.locale
+    private let calendar: Calendar
+
+    public init(date: Date, calendar: Calendar = Calendar.localized) {
+        self.dateFormatter = DateFormatter()
+        self.date = date
+        self.calendar = calendar
+        self.dateFormatter.timeZone = calendar.timeZone
+    }
 
     public var simpleDate: String {
         dateFormatter.dateFormat = DateFormatter.dateFormat(
             fromTemplate: "MM/dd/yyyy",
             options: 0,
-            locale: dateFormatter.locale
+            locale: calendar.locale
         )
+
+        dateFormatter.calendar = calendar
 
         return dateFormatter.string(from: date)
     }
