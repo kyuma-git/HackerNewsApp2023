@@ -41,5 +41,5 @@ The UI design of this project is based on the Human Interface Guidelines. ([Huma
 Additionally, the following video, which introduces the fundamental concepts of SwiftUI, was also used as a reference. ([Design with SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10115/))
 
 ## API
-- We are using a REST API.
-- For HTTP networking, we utilize Codable for data encoding and decoding. (See APIClient file for more details!)
+- REST API is used.
+- Codable is used for HTTP networking. (See APIClient file for more details!)
