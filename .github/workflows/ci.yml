@@ -19,6 +19,9 @@ jobs:
       with:
         xcode-version: '14.2.0'
 
+    - name: List simulators
+      run: xcrun simctl list devices available
+
     - name: Install iOS Simulator
       # run: xcrun simctl create "MY-iPhone-SE-3rdGen" "iPhone SE (3rd generation)" iOS16
       run: xcrun simctl create "iPhone 14" com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16-2
