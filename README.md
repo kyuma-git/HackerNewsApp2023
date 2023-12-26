@@ -5,4 +5,5 @@
 - Run the build!
 
 ## Architecture document
-The layer structure is organized based on VMMV; the Model layer incorporates the Clean Architecture philosophy. The persistence layer adopts the Repository pattern.
+The layer structure is organized based on MVVM; the Model layer incorporates the Clean Architecture philosophy. The persistence layer adopts the Repository pattern.
+

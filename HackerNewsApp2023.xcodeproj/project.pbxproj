@@ -156,6 +156,7 @@
 		4EC1BD612B3A1DD800EEBC96 /* DatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePresenter.swift; sourceTree = "<group>"; };
 		4EC1BD672B3A269F00EEBC96 /* UtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC1BD722B3A26CD00EEBC96 /* DatePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePresenterTests.swift; sourceTree = "<group>"; };
+		4EC1BD742B3ACF5100EEBC96 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4EF6660B2B2A7993001B6674 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +239,7 @@
 		4EB363342B23947C00AD694E = {
 			isa = PBXGroup;
 			children = (
+				4EC1BD742B3ACF5100EEBC96 /* README.md */,
 				4EB3633F2B23947C00AD694E /* HackerNewsApp2023 */,
 				4EB363722B23958C00AD694E /* Domain */,
 				4EB363832B23959700AD694E /* Infra */,
