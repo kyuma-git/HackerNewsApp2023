@@ -38,6 +38,8 @@ public struct NewsRepository: NewsRepositoryProtocol {
 }
 
 private struct NewsRequest {
+    private static let API_URL_STRING = "https://hacker-news.firebaseio.com"
+
     struct GetStoryIDs: RequestConfiguration {
         typealias Response = [Story.ID]
         let method = Method.get
@@ -46,16 +48,16 @@ private struct NewsRequest {
         let parameters: [String : Any] = [:]
         let needsIDToken = true
 
-        init(strategy: NewsListUseCase.Strategy) {
+        init(strategy: NewsListUseCase.Strategy) throws {
             switch strategy {
             case .new:
                 endpoint = Endpoint(
-                    hostName: "https://hacker-news.firebaseio.com",
+                    hostName: API_URL_STRING,
                     path: "/v0/newstories.json"
                 )
             case .popular:
                 endpoint = Endpoint(
-                    hostName: "https://hacker-news.firebaseio.com",
+                    hostName: API_URL_STRING,
                     path: "/v0/beststories.json"
                 )
             }
