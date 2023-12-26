@@ -36,7 +36,3 @@ public struct Story: Identifiable, Hashable {
         self.createdAt = createdAt
     }
 }
-
-public enum StoryError: Error {
-    case invalidURL
-}

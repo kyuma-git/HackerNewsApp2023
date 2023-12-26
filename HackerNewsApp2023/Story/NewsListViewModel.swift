@@ -10,14 +10,13 @@ import Utility
 import Domain
 import Infra
 
+@MainActor
 final class NewsListViewModel: ObservableObject {
-
-    enum Event {
-        case showInternalWeb(url: URL)
-    }
 
     @Published var uiState: UIState<NewsListViewObject> = .initial
     @Published var selectedStoryURL: IdentifiableURL?
+    @Published var showDialog = false
+    @Published var dialogMessage: String = ""
 
     private let  newsListSubject = PassthroughSubject<[Story], Never>()
     private var cancellable = Set<AnyCancellable>()
@@ -39,7 +38,12 @@ final class NewsListViewModel: ObservableObject {
 
     func onAppear() {
         Task {
-            try await fetch()
+            do {
+                uiState = .loading
+                try await fetch()
+            } catch {
+                updateMessageAndShowDialog(newMessage: "Faild to fetch contents.")
+            }
         }
     }
 
@@ -47,9 +51,8 @@ final class NewsListViewModel: ObservableObject {
         if let url = url {
             selectedStoryURL = IdentifiableURL(url: url)
         } else {
-            // show error dialong
+            updateMessageAndShowDialog(newMessage: "Faild to show webpage. Please try again later.")
         }
-        
     }
 
     private func setupBindings() {
@@ -58,8 +61,7 @@ final class NewsListViewModel: ObservableObject {
             .sink { [weak self] items in
                 guard let strongSelf = self else { return }
                 // Order an Array of Story in descending date order.
-                var stories = items
-                let sortedStories: [Story] = stories.sorted { $0.createdAt > $1.createdAt }
+                let sortedStories: [Story] = items.sorted { $0.createdAt > $1.createdAt }
 
                 self?.uiState = .loaded(NewsListViewObject(
                     strategy: strongSelf.useCase.dependency.strategy,
@@ -71,11 +73,16 @@ final class NewsListViewModel: ObservableObject {
 
     func fetch() async throws {
         do {
-            uiState = .loading
             let response = try await useCase.fetchStories()
             newsListSubject.send(response)
         } catch {
             print("Failed to fetch news stories: \(error.localizedDescription)")
+            throw error
         }
+    }
+
+    func updateMessageAndShowDialog(newMessage: String) {
+        dialogMessage = newMessage
+        showDialog = true
     }
 }

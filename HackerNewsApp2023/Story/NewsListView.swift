@@ -14,6 +14,7 @@ struct NewsListView: View {
 
     @StateObject private var viewModel: NewsListViewModel
     @State private var cancellables = Set<AnyCancellable>()
+    @State var showDialog = false
 
     public init(strategy: NewsListUseCase.Strategy) {
         _viewModel = StateObject(wrappedValue: NewsListViewModel(strategy: strategy))
@@ -111,6 +112,9 @@ struct NewsListView: View {
         .presentationDragIndicator(.visible)
         .onAppear {
             viewModel.onAppear()
+        }
+        .alert(isPresented: $viewModel.showDialog) {
+            Alert(title: Text("Message"), message: Text(viewModel.dialogMessage), dismissButton: .default(Text("OK")))
         }
     }
 }

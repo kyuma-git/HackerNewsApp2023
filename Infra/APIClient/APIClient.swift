@@ -193,7 +193,7 @@ struct URLSessionClient: URLSessionClientProtocol {
             case let e as APIClientError:
                 throw e
             default:
-                throw APIClientError.unknown(message: "URLSessionClient内でのリクエスト生成時に何か起きているので要調査")
+                throw APIClientError.unknown(message: "Something wrong is caused when creating api request.")
             }
         }
 
@@ -230,7 +230,7 @@ struct URLSessionClient: URLSessionClientProtocol {
                 )
             }
         } else {
-            throw APIClientError.unknown(message: "基本的にここに来ることは想定していない")
+            throw APIClientError.unknown(message: "Here should not be executed.")
         }
 
         return result

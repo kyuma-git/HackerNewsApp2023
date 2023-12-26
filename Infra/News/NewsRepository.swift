@@ -13,15 +13,27 @@ import Utility
 // https://github.com/HackerNews/API
 
 public struct NewsRepository: NewsRepositoryProtocol {
+    public enum Error: Swift.Error {
+        case decodingError
+        case unknown
+    }
 
     public init() {}
 
     public func fetchStoryIDs(strategy: NewsListUseCase.Strategy) async throws -> [Story.ID] {
-        try await APIClient().connect(config: NewsRequest.GetStoryIDs(strategy: strategy))
+        do {
+            return try await APIClient().connect(config: NewsRequest.GetStoryIDs(strategy: strategy))
+        } catch {
+            throw NewsRepository.Error.unknown
+        }
     }
 
     public func fetchStory(id: Story.ID) async throws -> Story {
-        try await APIClient().connect(config: NewsRequest.Get(id: id))
+        do {
+            return try await APIClient().connect(config: NewsRequest.Get(id: id))
+        } catch {
+            throw NewsRepository.Error.unknown
+        }
     }
 }
 
@@ -75,7 +87,7 @@ private struct NewsRequest {
     }
 }
 
-struct StoryIDDTO: Decodable {
+private struct StoryIDDTO: Decodable {
     let value: Int
 
     init(from decoder: Decoder) throws {
@@ -85,7 +97,7 @@ struct StoryIDDTO: Decodable {
     }
 }
 
-struct StoryDTO: Decodable {
+private struct StoryDTO: Decodable {
     let id: Int
     let authorName: String
     let title: String
@@ -103,16 +115,16 @@ struct StoryDTO: Decodable {
     }
 }
 
-extension Story.ID {
+private extension Story.ID {
     init(dto: StoryIDDTO) {
         self = Story.ID(value: dto.value)
     }
 }
 
-extension Story {
+private extension Story {
     init(dto: StoryDTO) throws {
         guard let url = URL(string: dto.urlString) else {
-            throw StoryError.invalidURL
+            throw NewsRepository.Error.decodingError
         }
 
         self = Story(

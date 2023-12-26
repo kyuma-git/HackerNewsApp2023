@@ -22,8 +22,9 @@ class NewsListUseCaseTests: XCTestCase {
                 id: Story.ID(value: 1),
                 authorName: "Sample author name",
                 title: "Sample article title",
-                url: URL(string: "https://www.twitter.com"),
-                score: 5
+                url: URL(string: "https://www.twitter.com")!,
+                score: 5,
+                createdAt: Date(timeIntervalSince1970: 1672507800)
             )
         )
 

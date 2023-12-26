@@ -5,7 +5,6 @@
 //  Created by Kyuma Morita on 2023/12/12.
 //
 
-/// TODO: Write struct document, and the reason why UseCase is used
 public struct NewsListUseCase {
 
     public struct Dependency {
@@ -28,10 +27,6 @@ public struct NewsListUseCase {
         case popular
     }
 
-    public enum NewsListError: Error {
-        case fetchError
-    }
-
     public let dependency: Dependency
 
     public init(dependency: Dependency) {
@@ -39,7 +34,12 @@ public struct NewsListUseCase {
     }
 
     private func fetchIDs() async throws -> [Story.ID] {
-        try await dependency.newsRepository.fetchStoryIDs(strategy: dependency.strategy)
+        do {
+            return try await dependency.newsRepository.fetchStoryIDs(strategy: dependency.strategy)
+        } catch {
+            print("Error fetching story ids")
+            throw error
+        }
     }
 
     public func fetchStories() async throws -> [Story] {
