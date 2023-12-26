@@ -17,7 +17,7 @@ by switching tabs, users can view both new and popular articles.
 nothing to write?
 
 ## Architecture
-HackerNewsApp2023 project is implemented using Model-View-ViewModel (MVVM) architecture pattern. (More about MVVM - https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm)
+HackerNewsApp2023 project is implemented using Model-View-ViewModel (MVVM) architecture pattern.([Microsoft reference](https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm))
 
 - Model is responsible for the data and business logic
 - View is responsible for the presentation layer. This components display the data and captures users input.
@@ -39,8 +39,8 @@ but since test targets are created for each module, it's also possible to conduc
 ## Dependency
 
 ## Design
-The UI design of this project is based on the Human Interface Guidelines. (Human Interface Guidelines - https://developer.apple.com/design/human-interface-guidelines)
-Additionally, the following video, which introduces the fundamental concepts of SwiftUI, was also used as a reference. (Design with SwiftUI - https://developer.apple.com/videos/play/wwdc2023/10115/)
+The UI design of this project is based on the Human Interface Guidelines.([Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines))
+Additionally, the following video, which introduces the fundamental concepts of SwiftUI, was also used as a reference.([Design with SwiftUI](https://developer.apple.com/videos/play/wwdc2023/10115/))
 
 ## API
 - We are using a REST API
