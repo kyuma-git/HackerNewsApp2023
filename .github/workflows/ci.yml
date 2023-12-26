@@ -1,0 +1,30 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '14.2.0'
+
+    - name: Create a new simulator
+      run: |
+        new_simulator_id=$(xcrun simctl create "custom-iPhone14" com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16-2)
+        echo "SIMULATOR_ID=$new_simulator_id" >> $GITHUB_ENV
+  
+    - name: Boot the new simulator
+      run: xcrun simctl boot ${{ env.SIMULATOR_ID }}
+    - name: Run tests
+      run: xcodebuild test -project HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination "id=${{ env.SIMULATOR_ID }}"
