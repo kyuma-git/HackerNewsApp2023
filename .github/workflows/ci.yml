@@ -20,7 +20,7 @@ jobs:
         xcode-version: '14.2.0'
 
     - name: Install iOS Simulator
-      run: xcrun simctl create "iPhone 14" com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16
+      run: xcrun simctl create "iPhone 11" com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-14-4
 
     - name: Run tests
       run: xcodebuild test -project HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
