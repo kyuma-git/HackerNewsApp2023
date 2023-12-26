@@ -20,4 +20,4 @@ jobs:
         xcode-version: '14.2.0'
 
     - name: Run tests
-      run: xcodebuild test -workspace HackerNewsApp2023.xcworkspace -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
+      run: xcodebuild test -workspace HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
