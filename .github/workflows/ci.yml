@@ -25,4 +25,4 @@ jobs:
       # run: xcrun simctl list runtimes
 
     - name: Run tests
-      run: xcodebuild test -project HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
+      run: xcodebuild test -project HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2'
