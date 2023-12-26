@@ -17,7 +17,7 @@ jobs:
     - name: Set up Xcode
       uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: '15.0.1'
+        xcode-version: '14.2.0'
 
     - name: Run tests
-      run: xcodebuild test -workspace HackerNewsApp2023.xcworkspace -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0'
+      run: xcodebuild test -workspace HackerNewsApp2023.xcworkspace -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
