@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E0EF0122B346339005A5427 /* HackerNewsApp2023Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0EF0112B346339005A5427 /* HackerNewsApp2023Tests.swift */; };
 		4E84E38D2B2C9D350017CC04 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363712B23958C00AD694E /* Domain.framework */; };
-		4E84E3D12B34622B0017CC04 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84E3D02B34622B0017CC04 /* DomainTests.swift */; };
 		4E84E3D22B34622B0017CC04 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EB363712B23958C00AD694E /* Domain.framework */; };
 		4E84E3D82B34623A0017CC04 /* NewsListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */; };
 		4EB363412B23947C00AD694E /* HackerNewsApp2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB363402B23947C00AD694E /* HackerNewsApp2023App.swift */; };
@@ -132,9 +130,7 @@
 
 /* Begin PBXFileReference section */
 		4E0EF00F2B346339005A5427 /* HackerNewsApp2023Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsApp2023Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E0EF0112B346339005A5427 /* HackerNewsApp2023Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsApp2023Tests.swift; sourceTree = "<group>"; };
 		4E84E3CE2B34622B0017CC04 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E84E3D02B34622B0017CC04 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		4EB3633D2B23947C00AD694E /* HackerNewsApp2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNewsApp2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB363402B23947C00AD694E /* HackerNewsApp2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsApp2023App.swift; sourceTree = "<group>"; };
 		4EB363422B23947C00AD694E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,14 +220,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E0EF0102B346339005A5427 /* HackerNewsApp2023Tests */ = {
-			isa = PBXGroup;
-			children = (
-				4E0EF0112B346339005A5427 /* HackerNewsApp2023Tests.swift */,
-			);
-			path = HackerNewsApp2023Tests;
-			sourceTree = "<group>";
-		};
 		4E84E38C2B2C9D350017CC04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,7 +230,7 @@
 		4E84E3CF2B34622B0017CC04 /* DomainTests */ = {
 			isa = PBXGroup;
 			children = (
-				4E84E3D02B34622B0017CC04 /* DomainTests.swift */,
+				4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */,
 			);
 			path = DomainTests;
 			sourceTree = "<group>";
@@ -255,7 +243,6 @@
 				4EB363832B23959700AD694E /* Infra */,
 				4EB363A62B28657A00AD694E /* Utility */,
 				4E84E3CF2B34622B0017CC04 /* DomainTests */,
-				4E0EF0102B346339005A5427 /* HackerNewsApp2023Tests */,
 				4EC1BD682B3A269F00EEBC96 /* UtilityTests */,
 				4EB3633E2B23947C00AD694E /* Products */,
 				4E84E38C2B2C9D350017CC04 /* Frameworks */,
@@ -328,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				4EB363B42B288AE800AD694E /* NewsListUseCase.swift */,
-				4EF6660D2B2B16C6001B6674 /* NewsListUseCaseTests.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -671,7 +657,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E0EF0122B346339005A5427 /* HackerNewsApp2023Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +665,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E84E3D82B34623A0017CC04 /* NewsListUseCaseTests.swift in Sources */,
-				4E84E3D12B34622B0017CC04 /* DomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
