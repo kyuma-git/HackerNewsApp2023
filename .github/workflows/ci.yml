@@ -19,13 +19,18 @@ jobs:
       with:
         xcode-version: '14.2.0'
 
-    - name: List simulators
-      run: xcrun simctl list devices available
+    - name: Create a new simulator
+      run: |
+        new_simulator_id=$(xcrun simctl create "custom-iPhone14" com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16-2)
+        echo "SIMULATOR_ID=$new_simulator_id" >> $GITHUB_ENV
+  
+    - name: Boot the new simulator
+      run: xcrun simctl boot ${{ env.SIMULATOR_ID }}
 
-    - name: Install iOS Simulator
+    # - name: Install iOS Simulator
       # run: xcrun simctl create "MY-iPhone-SE-3rdGen" "iPhone SE (3rd generation)" iOS16
-      run: xcrun simctl create "iPhone 14" com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16-2
+      # run: xcrun simctl create "iPhone 14" com.apple.CoreSimulator.SimDeviceType.iPhone-14 com.apple.CoreSimulator.SimRuntime.iOS-16-2
       # run: xcrun simctl list runtimes
 
     - name: Run tests
-      run: xcodebuild test -project HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2'
+      run: xcodebuild test -project HackerNewsApp2023.xcodeproj -scheme HackerNewsApp2023 -destination "id=${{ env.SIMULATOR_ID }}"
