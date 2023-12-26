@@ -20,6 +20,10 @@ public struct NewsListUseCase {
         }
     }
 
+    public enum NewsListError: Error {
+        case fetchError
+    }
+
     public enum Strategy {
         ///  Latest stories
         case new
@@ -38,7 +42,7 @@ public struct NewsListUseCase {
             return try await dependency.newsRepository.fetchStoryIDs(strategy: dependency.strategy)
         } catch {
             print("Error fetching story ids")
-            throw error
+            throw NewsListUseCase.NewsListError.fetchError
         }
     }
 

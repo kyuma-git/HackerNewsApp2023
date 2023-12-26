@@ -93,7 +93,7 @@ struct NewsListView: View {
                 }
             case .loading:
                 ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .blue)) // 任意の色に設定
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                     .scaleEffect(2)
             case .error:
                 VStack {

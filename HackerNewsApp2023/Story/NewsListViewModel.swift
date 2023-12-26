@@ -42,7 +42,7 @@ final class NewsListViewModel: ObservableObject {
                 uiState = .loading
                 try await fetch()
             } catch {
-                updateMessageAndShowDialog(newMessage: "Faild to fetch contents.")
+                uiState = .error
             }
         }
     }
